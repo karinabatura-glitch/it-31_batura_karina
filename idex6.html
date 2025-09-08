@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація на подію</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 8px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Реєстрація на подію</h1>
+    </header>
+    <main>
+        <h2>Заповніть форму</h2>
+        <form>
+            <label for="name">Ім’я:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+        <label for="ticket">Тип квитка:</label>
+        <select id="ticket" name="ticket" required>
+            <option value="" disabled selected>Оберіть тип квитка</option>
+            <option value="звичайний">Звичайний</option>
+            <option value="vip">VIP</option>
+            <option value="студентський">Студентський</option>
+        </select>
+            <label>Додаткові послуги:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="services" value="харчування"> Харчування</label>
+                <label><input type="checkbox" name="services" value="трансфер"> Трансфер</label>
+            </div>
+
+            <label for="wishes">Спеціальні побажання:</label>
+            <textarea id="wishes" name="wishes" rows="4"></textarea>
+
+            <label>Спосіб оплати:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="payment" value="картка" required> Картка</label>
+                <label><input type="radio" name="payment" value="готівка"> Готівка</label>
+            </div>
+
+            <label>
+                <input type="checkbox" name="agree" required>
+                Я погоджуюсь з правилами участі у події
+            </label>
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Компанія. Всі права захищені.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec sem et eros luctus dignissim.</p>
+    </footer>
+
+</body>
+</html>
