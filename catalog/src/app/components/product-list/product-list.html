@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Каталог товарів</h2>
+
+  <div class="product-list">
+    @for (product of products(); track product.id) {
+      <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>Ціна: {{ product.price }} грн</p>
+        <p>Кількість: {{ product.quantity }}</p>
+        <button (click)="onRemoveProduct(product.id)">Видалити</button>
+      </div>
+    } @empty {
+      <p>Список товарів порожній.</p>
+    }
+  </div>
+
+  <hr />
+
+  <h3>Додати новий товар</h3>
+  <form (ngSubmit)="onAddProduct()">
+    <div>
+      <label>Назва: </label>
+      <input type="text" [(ngModel)]="newName" name="name" required />
+    </div>
+
+    <div>
+      <label>Ціна: </label>
+      <input type="number" [(ngModel)]="newPrice" name="price" required />
+    </div>
+
+    <div>
+      <label>Кількість: </label>
+      <input type="number" [(ngModel)]="newQuantity" name="quantity" required />
+    </div>
+
+    <button type="submit">Додати товар</button>
+  </form>
+</div>
